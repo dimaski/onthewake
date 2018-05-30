@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onthewake</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<div main style="display: flex; flex-direction: column;">
+
+  <div id="header-gradient" class="parallax-container" style="height: 100vh">
+    <div class="parallax"><img onload="getHeaderVibrant(this)" style="filter: blur(2px);" src="<%= asset_path ('bg.jpg') %>"></div>
+  </div>
+
+
+
+  <div class="parallax-container" style="height: 61vh">
+    <div class="parallax"><img src="<%= asset_path ('space.jpg') %>"></div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap;">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </div>
+
+  <%= yield %>
+</div>
+<footer></footer>
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+    $( document ).on('turbolinks:load', function() {
+        $('.parallax').parallax();
+    });
+</script>
